@@ -11,7 +11,7 @@ naponként / idősávonként kihasználtsági százalékot számol.
 | `padel_scraper.py` | Klubfelderítés + 7 napos foglaltság-lekérdezés → `data/snapshot_*.json`, `data/occupancy_*.csv`, `data/latest.json` |
 | `generate_report.py` | A `data/latest.json`-ból (és az összes korábbi snapshotból) magyar nyelvű `report.html` riportot készít |
 | `run_daily.sh` | A kettő egyben — ezt hívja az időzítő |
-| `com.padel.radar.plist` | macOS launchd időzítés (naponta egyszer, 17:00) |
+| `com.padel.radar.plist` | macOS launchd időzítés (naponta kétszer: 10:00 és 17:00) |
 | `data/` | Minden lekérdezés megőrződik — ebből épül a feltöltődési görbe |
 
 ## Kézi futtatás

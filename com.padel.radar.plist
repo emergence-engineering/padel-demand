@@ -9,10 +9,13 @@
     <string>/bin/zsh</string>
     <string>/Users/gergelygillay/Desktop/Claude/Padel piackutatás /run_daily.sh</string>
   </array>
-  <!-- Naponta egyszer, 17:00-kor: az aznapi esti csúcsról ekkor már
-       majdnem végleges a kép, a következő napok pedig így is naponta frissülnek -->
+  <!-- Naponta kétszer: 10:00 (a reggeli foglalási hullám után)
+       és 17:00 (az esti csúcs előtti, majdnem végleges állapot) -->
   <key>StartCalendarInterval</key>
-  <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>0</integer></dict>
+  <array>
+    <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
   <key>StandardErrorPath</key>
   <string>/tmp/padel-radar.err</string>
 </dict>
