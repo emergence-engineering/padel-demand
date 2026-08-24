@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.padel.radar</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/gergelygillay/Desktop/Claude/Padel piackutatás /run_daily.sh</string>
+  </array>
+  <!-- Naponta egyszer, 17:00-kor: az aznapi esti csúcsról ekkor már
+       majdnem végleges a kép, a következő napok pedig így is naponta frissülnek -->
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardErrorPath</key>
+  <string>/tmp/padel-radar.err</string>
+</dict>
+</plist>

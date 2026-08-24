@@ -1,0 +1,354 @@
+<title>Budapest Padel Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg:#F4F7FA; --card:#FFFFFF; --ink:#16232E; --mut:#5A6B7A; --line:#DCE5EC;
+    --core:#2563B8; --prime:#D97E28; --core-soft:#E3EDFA; --accent:#2563B8;
+    --warn-bg:#FBF3E7; --warn-ink:#8A5A1E; --shadow:0 1px 3px rgba(22,35,46,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#10161D; --card:#1B242E; --ink:#E8EEF4; --mut:#93A4B4; --line:#2C3844;
+      --core:#4A8CD9; --prime:#C77F38; --core-soft:#22303F; --accent:#4A8CD9;
+      --warn-bg:#2E2417; --warn-ink:#E0B26A; --shadow:0 1px 3px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#10161D; --card:#1B242E; --ink:#E8EEF4; --mut:#93A4B4; --line:#2C3844;
+    --core:#4A8CD9; --prime:#C77F38; --core-soft:#22303F; --accent:#4A8CD9;
+    --warn-bg:#2E2417; --warn-ink:#E0B26A; --shadow:0 1px 3px rgba(0,0,0,.35);
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Instrument Sans",system-ui,sans-serif; font-size:15.5px; line-height:1.55;
+  }
+  .wrap { max-width:1020px; margin:0 auto; padding:40px 22px 80px; }
+  header { margin-bottom:34px; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:600; color:var(--accent); }
+  h1 { font-family:"Bricolage Grotesque","Instrument Sans",sans-serif; font-weight:800;
+       font-size:clamp(30px,5vw,44px); line-height:1.06; margin:8px 0 10px; text-wrap:balance; }
+  .meta { color:var(--mut); font-size:14px; }
+  h2 { font-family:"Bricolage Grotesque","Instrument Sans",sans-serif; font-weight:700;
+       font-size:23px; margin:0 0 6px; text-wrap:balance; }
+  .eyebrow-inline { font-family:"Instrument Sans"; font-size:12px; font-weight:600; color:var(--mut);
+       text-transform:uppercase; letter-spacing:.1em; margin-left:8px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:10px;
+       padding:26px 28px; margin-bottom:22px; box-shadow:var(--shadow); }
+  section > p { max-width:68ch; color:var(--ink); }
+  p.lead { font-size:17px; }
+  .mut, .note { color:var(--mut); }
+  .note { font-size:14px; max-width:75ch; }
+
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:22px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; box-shadow:var(--shadow); }
+  .tile .v { font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:34px;
+       font-variant-numeric:tabular-nums; line-height:1.1; }
+  .tile .v.core-c { color:var(--core); } .tile .v.prime-c { color:var(--prime); }
+  .tile .l { font-size:13px; color:var(--mut); margin-top:4px; }
+
+  .legend { display:flex; gap:18px; font-size:13px; color:var(--mut); margin:8px 0 18px; }
+  .legend i { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+  .legend .lc i { background:var(--core); } .legend .lp i { background:var(--prime); }
+
+  .chart { display:flex; align-items:flex-end; gap:10px; padding:14px 4px 0; overflow-x:auto; }
+  .dgroup { flex:1 1 0; min-width:86px; text-align:center; }
+  .dgroup.today .dlabel { color:var(--accent); font-weight:600; }
+  .dbars { display:flex; align-items:flex-end; justify-content:center; gap:4px; height:170px; }
+  .dbar { width:30px; border-radius:4px 4px 0 0; position:relative; }
+  .dbar.core { background:var(--core); } .dbar.prime { background:var(--prime); }
+  .dbar span { position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+       font-size:11.5px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--ink); }
+  .dbar:hover::after { content:attr(data-tip); position:absolute; bottom:calc(100% + 24px); left:50%;
+       transform:translateX(-50%); background:var(--ink); color:var(--bg); font-size:12px;
+       padding:5px 9px; border-radius:6px; white-space:nowrap; z-index:5; }
+  .dlabel { font-size:12.5px; color:var(--mut); margin-top:8px; line-height:1.3; }
+  .dlabel em { font-style:normal; color:var(--accent); }
+
+  .tscroll { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font-size:14.5px; }
+  th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.07em;
+       color:var(--mut); font-weight:600; padding:8px 12px 8px 0; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td { padding:10px 12px 10px 0; border-bottom:1px solid var(--line); vertical-align:middle; }
+  tr:last-child td { border-bottom:none; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .cname { font-weight:600; min-width:190px; }
+  .csub { font-weight:400; font-size:12.5px; color:var(--mut); }
+  .flag { color:var(--warn-ink); cursor:help; }
+  .ibar { position:relative; background:var(--core-soft); border-radius:4px; height:20px; min-width:130px; }
+  .ibar-fill { height:100%; border-radius:4px; }
+  .ibar-fill.core { background:var(--core); } .ibar-fill.prime { background:var(--prime); }
+  .ibar-val { position:absolute; right:6px; top:0; line-height:20px; font-size:12px; font-weight:600;
+       font-variant-numeric:tabular-nums; color:var(--ink); }
+
+  .callout { background:var(--warn-bg); color:var(--warn-ink); border-radius:8px; padding:14px 18px;
+       font-size:14px; max-width:75ch; }
+  ul { padding-left:20px; } li { margin-bottom:7px; max-width:70ch; }
+  code { background:var(--core-soft); border-radius:4px; padding:1px 6px; font-size:13.5px; }
+  @media (prefers-reduced-motion:no-preference) {
+    .ibar-fill { transition:width .4s ease; }
+  }
+  @media (max-width:640px) { section { padding:20px 16px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Piackutatás · Playtomic-adatok</div>
+    <h1>Budapest Padel Radar</h1>
+    <div class="meta">Lekérdezve: 2026. 08. 24. 21:02 · Horizont: ma → 2026-08-30 ·
+      15 mérhető klub, 55 pálya</div>
+  </header>
+
+  <div class="tiles">
+    <div class="tile"><div class="v core-c">36%</div>
+      <div class="l">Napközbeni foglaltság (07–23), következő 3 nap</div></div>
+    <div class="tile"><div class="v prime-c">58%</div>
+      <div class="l">Csúcsidős foglaltság (17–22), következő 3 nap</div></div>
+    <div class="tile"><div class="v prime-c">68%</div>
+      <div class="l">Holnapi csúcsidő — a legérettebb, legmegbízhatóbb szám</div></div>
+    <div class="tile"><div class="v">55</div>
+      <div class="l">Online foglalható pálya 15 klubban (Budapest + agglomeráció)</div></div>
+  </div>
+
+  <section>
+    <h2>Foglaltság naponként</h2>
+    <p>Minden oszloppár egy nap: a kék a teljes napközbeni sáv (07–23), a borostyán a
+    csúcsidő (17–22). Pályaórával súlyozott átlag a mérhető klubokra.</p>
+    <div class="legend"><span class="lc"><i></i>Napközben 07–23</span>
+      <span class="lp"><i></i>Csúcsidő 17–22</span></div>
+    <div class="chart">
+        <div class="dgroup today">
+          <div class="dbars">
+            <div class="dbar core" style="height:77px" data-tip="Napközbeni (07–23): 52%"><span>52%</span></div>
+            <div class="dbar prime" style="height:117px" data-tip="Csúcsidő (17–22): 78%"><span>78%</span></div>
+          </div>
+          <div class="dlabel">08.24<br>hétfő<em> ma</em></div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:64px" data-tip="Napközbeni (07–23): 43%"><span>43%</span></div>
+            <div class="dbar prime" style="height:101px" data-tip="Csúcsidő (17–22): 68%"><span>68%</span></div>
+          </div>
+          <div class="dlabel">08.25<br>kedd</div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:53px" data-tip="Napközbeni (07–23): 35%"><span>35%</span></div>
+            <div class="dbar prime" style="height:91px" data-tip="Csúcsidő (17–22): 61%"><span>61%</span></div>
+          </div>
+          <div class="dlabel">08.26<br>szerda</div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:43px" data-tip="Napközbeni (07–23): 28%"><span>28%</span></div>
+            <div class="dbar prime" style="height:67px" data-tip="Csúcsidő (17–22): 44%"><span>44%</span></div>
+          </div>
+          <div class="dlabel">08.27<br>csütörtök</div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:31px" data-tip="Napközbeni (07–23): 21%"><span>21%</span></div>
+            <div class="dbar prime" style="height:34px" data-tip="Csúcsidő (17–22): 22%"><span>22%</span></div>
+          </div>
+          <div class="dlabel">08.28<br>péntek</div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:19px" data-tip="Napközbeni (07–23): 12%"><span>12%</span></div>
+            <div class="dbar prime" style="height:14px" data-tip="Csúcsidő (17–22): 9%"><span>9%</span></div>
+          </div>
+          <div class="dlabel">08.29<br>szombat</div>
+        </div>
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:11px" data-tip="Napközbeni (07–23): 7%"><span>7%</span></div>
+            <div class="dbar prime" style="height:10px" data-tip="Csúcsidő (17–22): 7%"><span>7%</span></div>
+          </div>
+          <div class="dlabel">08.30<br>vasárnap</div>
+        </div></div>
+    <p class="note"><strong>Így olvasd:</strong> a padelfoglalások zöme az utolsó 1–3 napban érkezik,
+    ezért a távolabbi napok alacsony száma nem alacsony keresletet jelent, hanem azt, hogy oda még
+    nem érkeztek be a foglalások. A holnapi/holnaputáni érték áll a legközelebb a végső kihasználtsághoz —
+    a hét végi napok valós számát a későbbi napi lekérdezések mutatják majd meg.</p>
+  </section>
+
+  <section>
+    <h2>Klubok rangsora <span class="eyebrow-inline">következő 3 nap</span></h2>
+    <div class="tscroll">
+    <table>
+      <thead><tr>
+        <th>Klub</th><th class="num">Pálya</th>
+        <th>Napközben 07–23</th><th>Csúcsidő 17–22</th>
+        <th class="num">7 nap<br>napközben</th><th class="num">7 nap<br>csúcs</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="cname">Premier Padel Park<div class="csub">XI. ker. · 2 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:77%"></div><span class="ibar-val">77%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:87%"></div><span class="ibar-val">87%</span></div></td>
+          <td class="num">64%</td>
+          <td class="num">62%</td>
+        </tr>
+        <tr>
+          <td class="cname">BUDAPADEL<div class="csub">III. ker. (Óbuda) · 7 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:45%"></div><span class="ibar-val">45%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:89%"></div><span class="ibar-val">89%</span></div></td>
+          <td class="num">26%</td>
+          <td class="num">49%</td>
+        </tr>
+        <tr>
+          <td class="cname">Grand Slam Padel<div class="csub">XI. ker. · 6 km a centrumtól</div></td>
+          <td class="num">3</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:44%"></div><span class="ibar-val">44%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:50%"></div><span class="ibar-val">50%</span></div></td>
+          <td class="num">28%</td>
+          <td class="num">27%</td>
+        </tr>
+        <tr>
+          <td class="cname">BVSC Padel club|First club in Pest!<div class="csub">XIV. ker. (Zugló) · 6 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:44%"></div><span class="ibar-val">44%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:88%"></div><span class="ibar-val">88%</span></div></td>
+          <td class="num">28%</td>
+          <td class="num">53%</td>
+        </tr>
+        <tr>
+          <td class="cname">DUNA PADEL<div class="csub">XXII. ker. · 10 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:36%"></div><span class="ibar-val">36%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:55%"></div><span class="ibar-val">55%</span></div></td>
+          <td class="num">35%</td>
+          <td class="num">42%</td>
+        </tr>
+        <tr>
+          <td class="cname">Premier Padel Nagyret<div class="csub">II. ker. · 8 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:44%"></div><span class="ibar-val">44%</span></div></td>
+          <td class="num">20%</td>
+          <td class="num">25%</td>
+        </tr>
+        <tr>
+          <td class="cname">Flow Padel Újpest<div class="csub">IV. ker. (Újpest) · 12 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:33%"></div><span class="ibar-val">33%</span></div></td>
+          <td class="num">22%</td>
+          <td class="num">25%</td>
+        </tr>
+        <tr>
+          <td class="cname">Budapest Padel<div class="csub">XVI. ker. · 10 km a centrumtól</div></td>
+          <td class="num">8</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:65%"></div><span class="ibar-val">65%</span></div></td>
+          <td class="num">21%</td>
+          <td class="num">39%</td>
+        </tr>
+        <tr>
+          <td class="cname">Padel Garden Budapest<div class="csub">III. ker. (Óbuda) · 8 km a centrumtól</div></td>
+          <td class="num">3</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:30%"></div><span class="ibar-val">30%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:63%"></div><span class="ibar-val">63%</span></div></td>
+          <td class="num">25%</td>
+          <td class="num">49%</td>
+        </tr>
+        <tr>
+          <td class="cname">Padel King Savoya<div class="csub">XI. ker. · 7 km a centrumtól</div></td>
+          <td class="num">6</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:28%"></div><span class="ibar-val">28%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:54%"></div><span class="ibar-val">54%</span></div></td>
+          <td class="num">16%</td>
+          <td class="num">29%</td>
+        </tr>
+        <tr>
+          <td class="cname">Future Padel Fót<div class="csub">Fót · 17 km a centrumtól</div></td>
+          <td class="num">1</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:24%"></div><span class="ibar-val">24%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:43%"></div><span class="ibar-val">43%</span></div></td>
+          <td class="num">17%</td>
+          <td class="num">26%</td>
+        </tr>
+        <tr>
+          <td class="cname">Zenith Padel Óbuda ÚJ!<div class="csub">III. ker. (Óbuda) · 6 km a centrumtól</div></td>
+          <td class="num">4</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:23%"></div><span class="ibar-val">23%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:36%"></div><span class="ibar-val">36%</span></div></td>
+          <td class="num">14%</td>
+          <td class="num">21%</td>
+        </tr>
+        <tr>
+          <td class="cname">New Padel Club<div class="csub">Budaörs · 9 km a centrumtól</div></td>
+          <td class="num">2</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:22%"></div><span class="ibar-val">22%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:43%"></div><span class="ibar-val">43%</span></div></td>
+          <td class="num">18%</td>
+          <td class="num">22%</td>
+        </tr>
+        <tr>
+          <td class="cname">Zenith Padel Club<div class="csub">XX. ker. · 9 km a centrumtól</div></td>
+          <td class="num">3</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:20%"></div><span class="ibar-val">20%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:44%"></div><span class="ibar-val">44%</span></div></td>
+          <td class="num">12%</td>
+          <td class="num">23%</td>
+        </tr>
+        <tr>
+          <td class="cname">Panorama Padel Budapest<div class="csub">XI. ker. · 7 km a centrumtól</div></td>
+          <td class="num">1</td>
+          <td><div class="ibar"><div class="ibar-fill core" style="width:6%"></div><span class="ibar-val">6%</span></div></td>
+          <td><div class="ibar"><div class="ibar-fill prime" style="width:0%"></div><span class="ibar-val">0%</span></div></td>
+          <td class="num">14%</td>
+          <td class="num">15%</td>
+        </tr></tbody>
+    </table>
+    </div>
+    <p class="note">Nem mérhető (a webes foglalást nem publikálja, vagy nem ad ki szabad idősávot): <strong>Musketas Padel, Top Padel Club</strong>. Ezek a fenti számokban nem szerepelnek.</p>
+  </section>
+
+  <section>
+    <h2>Területi bontás <span class="eyebrow-inline">következő 3 nap</span></h2>
+    <div class="tscroll">
+    <table>
+      <thead><tr><th>Terület</th><th class="num">Klub</th><th class="num">Pálya</th>
+        <th>Napközben 07–23</th><th class="num">Csúcsidő</th></tr></thead>
+      <tbody><tr><td>XI. ker.</td><td class="num">4</td><td class="num">14</td><td><div class="ibar"><div class="ibar-fill core" style="width:44%"></div><span class="ibar-val">44%</span></div></td><td class="num">59%</td></tr><tr><td>XIV. ker. (Zugló)</td><td class="num">1</td><td class="num">4</td><td><div class="ibar"><div class="ibar-fill core" style="width:44%"></div><span class="ibar-val">44%</span></div></td><td class="num">88%</td></tr><tr><td>XXII. ker.</td><td class="num">1</td><td class="num">4</td><td><div class="ibar"><div class="ibar-fill core" style="width:36%"></div><span class="ibar-val">36%</span></div></td><td class="num">55%</td></tr><tr><td>II. ker.</td><td class="num">1</td><td class="num">4</td><td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td><td class="num">44%</td></tr><tr><td>IV. ker. (Újpest)</td><td class="num">1</td><td class="num">4</td><td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td><td class="num">33%</td></tr><tr><td>III. ker. (Óbuda)</td><td class="num">3</td><td class="num">11</td><td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td><td class="num">63%</td></tr><tr><td>XVI. ker.</td><td class="num">1</td><td class="num">8</td><td><div class="ibar"><div class="ibar-fill core" style="width:33%"></div><span class="ibar-val">33%</span></div></td><td class="num">65%</td></tr><tr><td>Fót</td><td class="num">1</td><td class="num">1</td><td><div class="ibar"><div class="ibar-fill core" style="width:24%"></div><span class="ibar-val">24%</span></div></td><td class="num">43%</td></tr><tr><td>Budaörs</td><td class="num">1</td><td class="num">2</td><td><div class="ibar"><div class="ibar-fill core" style="width:22%"></div><span class="ibar-val">22%</span></div></td><td class="num">43%</td></tr><tr><td>XX. ker.</td><td class="num">1</td><td class="num">3</td><td><div class="ibar"><div class="ibar-fill core" style="width:20%"></div><span class="ibar-val">20%</span></div></td><td class="num">44%</td></tr></tbody>
+    </table>
+    </div>
+  </section>
+  
+
+  <section>
+    <h2>Szezonalitás</h2>
+    <p class="lead">Augusztus vége a padelpiac egyik leggyengébb időszaka — a most mért számok
+    a szezonális mélypont közelében készültek.</p>
+    <ul>
+      <li><strong>Nyár (júl–aug):</strong> szabadságolások, kültéri alternatívák — a beltéri pályák
+      kereslete jellemzően 20–40%-kal esik a tavaszi‑őszi szinthez képest.</li>
+      <li><strong>Főszezon (szept–nov és jan–ápr):</strong> a csúcsidős sávok a jó helyeken rendszeresen
+      betelnek; a most mért csúcsidős értékekre óvatos becslésként +15–30 százalékpont tehető.</li>
+      <li><strong>December:</strong> vegyes (ünnepek), <strong>május–június:</strong> lecsengő átmenet.</li>
+    </ul>
+    <p class="note">A pontos szezonális szorzót éppen ez az eszköz fogja megadni: ha a napi lekérdezés
+    ősszel is fut, a saját adatsorodból látod majd az augusztus→október változást becslés helyett.</p>
+  </section>
+
+  <section>
+    <h2>Módszertan és korlátok</h2>
+    <ul>
+      <li><strong>Forrás:</strong> a Playtomic nyilvános webes foglaltsági adatai (szabad idősávok
+      klubonként és pályánként, 7 napra előre). A foglaltság = 1 − szabad pályaóra / összes nyitvatartási pályaóra.</li>
+      <li><strong>„Foglalt” ≠ biztosan kifizetett foglalás:</strong> a klub által blokkolt sávok
+      (edzés, verseny, karbantartás) is foglaltnak látszanak. A tartósan 100%-os klub gyanús —
+      nála valószínűleg nem a kereslet, hanem az adatközlés az ok (⚠ jelölés).</li>
+      <li><strong>Csak online foglalható pályák látszanak:</strong> a telefonos/helyszíni foglalásokat
+      futtató klubok (Musketas Padel, Top Padel Club) kimaradnak.</li>
+      <li><strong>Lead-time torzítás:</strong> egy pillanatfelvétel a távoli napokat alulbecsüli.
+      A napi ismételt futtatás ezt kiküszöböli (feltöltődési görbe).</li>
+      <li><strong>Minimális foglalási idő:</strong> a 60 percnél rövidebb lyukak nem jelennek meg
+      szabadként — a valós kihasználtság ennyivel minimálisan alacsonyabb lehet a mértnél.</li>
+    </ul>
+  </section>
+</div>
