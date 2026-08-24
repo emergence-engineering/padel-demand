@@ -250,6 +250,9 @@ def occupancy_for_tenant(tenant, days):
         occ_open, hours_open, free_open = agg(open_cells)
         occ_core, hours_core, free_core = agg(core_cells)
         occ_prime, hours_prime, free_prime = agg(prime_cells)
+        # raw per-court free cells (30-min grid, local day) — the historical
+        # "final occupancy" reconstruction in generate_report.py needs these
+        free_cells = {rid: sorted(cells) for rid, cells in free.items() if rid in rids}
         out.append({
             "slug": tenant["slug"],
             "name": tenant["name"],
@@ -266,6 +269,7 @@ def occupancy_for_tenant(tenant, days):
             "free_court_hours_core": round(free_core, 1),
             "prime_court_hours": hours_prime,
             "free_court_hours_prime": round(free_prime, 1),
+            "free_cells": free_cells,
         })
         time.sleep(0.25)
     return out
@@ -336,8 +340,9 @@ def main():
 
     cpath = outdir / f"occupancy_{stamp}.csv"
     if rows:
+        fields = [k for k in rows[0] if k != "free_cells"]
         with open(cpath, "w", newline="") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+            w = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
             w.writeheader()
             w.writerows(rows)
     print(f"\nSaved: {jpath.name}, {cpath.name} ({len(rows)} club-day rows)")

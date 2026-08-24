@@ -58,6 +58,129 @@ def load():
     return d, snaps
 
 
+WEEKDAYS_EN = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+
+
+def _open_window(club, day_iso):
+    """(open_min, close_min) local minutes for a club on a date; 24h -> (0,1440)."""
+    day = date.fromisoformat(day_iso)
+    oh = (club.get("opening_hours") or {}).get(WEEKDAYS_EN[day.weekday()])
+    if not oh:
+        return (0, 1440)
+    to_min = lambda s: int(s[:2]) * 60 + int(s[3:5])
+    o, c = to_min(oh.get("opening_time", "00:00")), to_min(oh.get("closing_time", "00:00"))
+    if o == 0 and c == 0:
+        return (0, 1440)
+    if c <= o:
+        c = 1440
+    return (o, c)
+
+
+def reconstruct_finals(snaps):
+    """
+    Final (near-actual) occupancy for fully elapsed days, cell by cell:
+    each 30-min court-cell takes its free/busy status from the LAST snapshot
+    that observed it while it was still in the future. This removes the
+    lead-time bias of any single snapshot.
+    Returns {(slug, date): {"core": [busy, total], "prime": [busy, total]}}.
+    """
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo("Europe/Budapest")
+    last = {}
+    club_meta = {}
+    latest_scrape = None
+    for s in sorted(snaps, key=lambda s: s["scraped_at"]):
+        sat = datetime.fromisoformat(s["scraped_at"])
+        latest_scrape = sat
+        for c in s["clubs"]:
+            club_meta[c["slug"]] = c
+        for r in s["occupancy"]:
+            if not r.get("data_ok") or "free_cells" not in r:
+                continue
+            club = club_meta.get(r["slug"])
+            if not club:
+                continue
+            day = date.fromisoformat(r["date"])
+            frees = {rid: set(v) for rid, v in r["free_cells"].items()}
+            for rid in club["resource_ids"]:
+                fr = frees.get(rid, set())
+                for idx in range(48):
+                    cell_t = datetime(day.year, day.month, day.day,
+                                      idx // 2, (idx % 2) * 30, tzinfo=tz)
+                    if cell_t <= sat:
+                        continue
+                    last[(r["slug"], r["date"], rid, idx)] = idx in fr
+    if latest_scrape is None:
+        return {}
+    cutoff = latest_scrape.date().isoformat()
+    finals = defaultdict(lambda: {"core": [0, 0], "prime": [0, 0]})
+    for (slug, day, rid, idx), is_free in last.items():
+        if day >= cutoff:            # only fully elapsed days count as final
+            continue
+        o_min, c_min = _open_window(club_meta.get(slug, {}), day)
+        t = idx * 30
+        if not (o_min <= t < c_min):
+            continue
+        f = finals[(slug, day)]
+        for key, lo, hi in (("core", 7 * 60, 23 * 60), ("prime", 17 * 60, 22 * 60)):
+            if lo <= t < hi:
+                f[key][1] += 1
+                if not is_free:
+                    f[key][0] += 1
+    return dict(finals)
+
+
+def build_history(finals, clubs):
+    """Aggregate the finals into weekday pattern, weekly trend, per-club stats."""
+    pctf = lambda b: round(100 * b[0] / b[1], 1) if b[1] else None
+    by_date = defaultdict(lambda: {"core": [0, 0], "prime": [0, 0]})
+    for (slug, day), f in finals.items():
+        for k in ("core", "prime"):
+            by_date[day][k][0] += f[k][0]
+            by_date[day][k][1] += f[k][1]
+    dates = sorted(by_date)
+    if len(dates) < 3:
+        return {"insufficient": True, "n_dates": len(dates)}
+
+    wd = defaultdict(lambda: {"core": [0, 0], "prime": [0, 0], "n": 0})
+    for day, v in by_date.items():
+        w = date.fromisoformat(day).weekday()
+        wd[w]["n"] += 1
+        for k in ("core", "prime"):
+            wd[w][k][0] += v[k][0]
+            wd[w][k][1] += v[k][1]
+    weekday_rows = [{"hu": HU_DAYS[w], "n": wd[w]["n"],
+                     "core": pctf(wd[w]["core"]), "prime": pctf(wd[w]["prime"])}
+                    for w in range(7) if w in wd]
+
+    wk = defaultdict(lambda: {"core": [0, 0], "prime": [0, 0], "days": set()})
+    for day, v in by_date.items():
+        iso = date.fromisoformat(day).isocalendar()
+        key = f"{iso[0]}. {iso[1]}. hét"
+        wk[key]["days"].add(day)
+        for k in ("core", "prime"):
+            wk[key][k][0] += v[k][0]
+            wk[key][k][1] += v[k][1]
+    week_rows = [{"week": k, "days": len(v["days"]),
+                  "core": pctf(v["core"]), "prime": pctf(v["prime"])}
+                 for k, v in sorted(wk.items())]
+
+    by_club = defaultdict(lambda: {"core": [0, 0], "prime": [0, 0]})
+    for (slug, day), f in finals.items():
+        for k in ("core", "prime"):
+            by_club[slug][k][0] += f[k][0]
+            by_club[slug][k][1] += f[k][1]
+    club_rows = sorted(
+        ({"name": clubs[s]["name"].strip() if s in clubs else s,
+          "core": pctf(v["core"]), "prime": pctf(v["prime"])}
+         for s, v in by_club.items()),
+        key=lambda x: -(x["prime"] or 0))
+    return {"insufficient": False, "n_dates": len(dates),
+            "first": dates[0], "last": dates[-1],
+            "weekday_rows": weekday_rows, "week_rows": week_rows,
+            "club_rows": club_rows}
+
+
 def build(d, snaps):
     scraped = datetime.fromisoformat(d["scraped_at"])
     today = scraped.date()
@@ -140,12 +263,15 @@ def build(d, snaps):
     fill_rows = [(day, sorted(m.items())) for day, m in sorted(fill.items())
                  if len(m) >= 2]
 
+    hist = build_history(reconstruct_finals(snaps), clubs)
+
     return {
         "scraped": scraped, "today": today,
         "n_clubs": len(measurable_slugs), "n_courts": n_courts,
         "nodata": nodata, "day_rows": day_rows,
         "head_core": head_core, "head_prime": head_prime, "tom_prime": tom_prime,
         "per_club": per_club, "dist_rows": dist_rows, "fill_rows": fill_rows,
+        "hist": hist,
     }
 
 
@@ -219,6 +345,59 @@ def render(m):
         <div class="tscroll"><table>
           <thead><tr><th>Célnap</th><th>Napközbeni foglaltság a lekérdezés napján</th></tr></thead>
           <tbody>{frows}</tbody>
+        </table></div>
+      </section>'''
+
+    hist = m.get("hist") or {"insufficient": True, "n_dates": 0}
+    if hist["insufficient"]:
+        hist_html = f'''
+      <section>
+        <h2>Tényleges kihasználtság <span class="eyebrow-inline">lezárt napok</span></h2>
+        <p class="note">Ez a nézet automatikusan megjelenik, amint néhány napnyi adat összegyűlt
+        (jelenleg {hist["n_dates"]} lezárt nap van meg, legalább 3 kell). A napi futások minden
+        félórás idősáv végső állapotát rögzítik, így itt a <strong>valós, torzításmentes</strong>
+        kihasználtság lesz látható: hétköznap-minta, heti trend (szezonalitás) és klubonkénti
+        valós foglaltság.</p>
+      </section>'''
+    else:
+        wd_bars = ""
+        for w in hist["weekday_rows"]:
+            core_h = 0 if w["core"] is None else max(4, w["core"] / 100 * 150)
+            prime_h = 0 if w["prime"] is None else max(4, w["prime"] / 100 * 150)
+            wd_bars += f'''
+        <div class="dgroup">
+          <div class="dbars">
+            <div class="dbar core" style="height:{core_h:.0f}px" data-tip="Napközben: {pct(w['core'])} ({w['n']} nap)"><span>{pct(w["core"])}</span></div>
+            <div class="dbar prime" style="height:{prime_h:.0f}px" data-tip="Csúcsidő: {pct(w['prime'])} ({w['n']} nap)"><span>{pct(w["prime"])}</span></div>
+          </div>
+          <div class="dlabel">{w["hu"]}</div>
+        </div>'''
+        week_trs = "".join(
+            f'<tr><td>{H.escape(w["week"])}</td><td class="num">{w["days"]}</td>'
+            f'<td>{bar(w["core"], "core")}</td><td class="num">{pct(w["prime"])}</td></tr>'
+            for w in hist["week_rows"])
+        hclub_trs = "".join(
+            f'<tr><td>{H.escape(c["name"])}</td><td>{bar(c["prime"], "prime")}</td>'
+            f'<td class="num">{pct(c["core"])}</td></tr>'
+            for c in hist["club_rows"])
+        hist_html = f'''
+      <section>
+        <h2>Tényleges kihasználtság <span class="eyebrow-inline">{hist["first"]} → {hist["last"]} · {hist["n_dates"]} lezárt nap</span></h2>
+        <p>Minden félórás idősáv végső állapota az utolsó olyan lekérdezésből, amikor a sáv még
+        a jövőben volt — ez a lead-time torzítástól mentes, valós kihasználtság.</p>
+        <h3 style="font-size:16px;margin:18px 0 4px">Hétköznap-minta</h3>
+        <div class="legend"><span class="lc"><i></i>Napközben 07–23</span>
+          <span class="lp"><i></i>Csúcsidő 17–22</span></div>
+        <div class="chart">{wd_bars}</div>
+        <h3 style="font-size:16px;margin:26px 0 8px">Heti trend — ebből látszik a szezonalitás</h3>
+        <div class="tscroll"><table>
+          <thead><tr><th>Hét</th><th class="num">Mért nap</th><th>Napközben 07–23</th><th class="num">Csúcsidő</th></tr></thead>
+          <tbody>{week_trs}</tbody>
+        </table></div>
+        <h3 style="font-size:16px;margin:26px 0 8px">Klubok valós kihasználtsága</h3>
+        <div class="tscroll"><table>
+          <thead><tr><th>Klub</th><th>Csúcsidő 17–22</th><th class="num">Napközben</th></tr></thead>
+          <tbody>{hclub_trs}</tbody>
         </table></div>
       </section>'''
 
@@ -376,6 +555,7 @@ def render(m):
     </table>
     </div>
   </section>
+  {hist_html}
   {fill_html}
 
   <section>
