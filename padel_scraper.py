@@ -105,7 +105,8 @@ def discover_slugs():
     for q in SEARCH_QUERIES:
         url = f"{BASE}/search?sport=PADEL&q={urllib.parse.quote(q)}"
         try:
-            html = fetch(url)
+            # rövid timeout: ha a Playtomic SSR oldalai állnak, ne itt ragadjunk le
+            html = fetch(url, retries=2, timeout=12)
         except Exception as e:
             print(f"  search '{q}' failed: {e}", file=sys.stderr)
             continue
@@ -123,7 +124,7 @@ def haversine_km(a, b):
 
 
 def get_tenant(slug):
-    html = fetch(f"{BASE}/clubs/{slug}")
+    html = fetch(f"{BASE}/clubs/{slug}", retries=2, timeout=12)
     blob = rsc_blob(html)
     t = extract_json_object(blob, '"tenant_id"')
     if not t or "tenant_id" not in t:
@@ -295,28 +296,45 @@ def main():
     days = [today + timedelta(days=i) for i in range(args.days)]
     stamp = datetime.now(TZ).strftime("%Y-%m-%d_%H%M")
 
+    registry = outdir / "clubs.json"
+
     print("1/3 Discovering clubs…")
+    tenants = []
     slugs = discover_slugs()
     print(f"    {len(slugs)} candidate slugs")
 
-    print("2/3 Fetching club metadata…")
-    tenants = []
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        futs = {ex.submit(get_tenant, s): s for s in slugs}
-        for f in as_completed(futs):
-            try:
-                t = f.result()
-            except Exception as e:
-                print(f"  club {futs[f]}: {e}", file=sys.stderr)
-                continue
-            if not t or t["country_code"] != "HU" or not t["lat"] or t["courts"] == 0:
-                continue
-            t["km_from_center"] = round(haversine_km((t["lat"], t["lon"]), BUDAPEST_CENTER), 1)
-            if t["km_from_center"] <= MAX_KM:
-                tenants.append(t)
-    tenants.sort(key=lambda t: -t["courts"])
-    print(f"    {len(tenants)} Budapest-area padel clubs, "
-          f"{sum(t['courts'] for t in tenants)} courts")
+    if len(slugs) >= 5:
+        print("2/3 Fetching club metadata…")
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            futs = {ex.submit(get_tenant, s): s for s in slugs}
+            for f in as_completed(futs):
+                try:
+                    t = f.result()
+                except Exception as e:
+                    print(f"  club {futs[f]}: {e}", file=sys.stderr)
+                    continue
+                if not t or t["country_code"] != "HU" or not t["lat"] or t["courts"] == 0:
+                    continue
+                t["km_from_center"] = round(haversine_km((t["lat"], t["lon"]), BUDAPEST_CENTER), 1)
+                if t["km_from_center"] <= MAX_KM:
+                    tenants.append(t)
+        tenants.sort(key=lambda t: -t["courts"])
+
+    if len(tenants) >= 5:
+        # sikeres felderítés -> frissítjük a klub-gyorsítótárat
+        registry.write_text(json.dumps(tenants, ensure_ascii=False, indent=1))
+        print(f"    {len(tenants)} Budapest-area padel clubs, "
+              f"{sum(t['courts'] for t in tenants)} courts (registry updated)")
+    elif registry.exists():
+        # a kereső/kluboldalak nem elérhetők (Playtomic SSR leállás vagy
+        # netkimaradás) -> a cache-elt klublistával így is tudunk mérni
+        tenants = json.loads(registry.read_text())
+        print(f"    discovery unavailable — using cached registry "
+              f"({len(tenants)} clubs)")
+    else:
+        print("ABORT: discovery failed and no cached registry — network problem?",
+              file=sys.stderr)
+        sys.exit(1)
 
     print("3/3 Scraping availability…")
     rows = []
@@ -335,6 +353,12 @@ def main():
             r["data_ok"] = False
             r["occ_open_pct"] = r["occ_core_pct"] = r["occ_prime_pct"] = None
     rows.sort(key=lambda r: (r["date"], -(r["occ_core_pct"] or 0)))
+
+    if not any(r["data_ok"] for r in rows):
+        # Menet közben halt el a net, vagy minden lekérés hibázott:
+        # üres snapshotot nem mentünk, ne írjuk felül a jó adatot.
+        print("ABORT: no measurable availability data — network problem?", file=sys.stderr)
+        sys.exit(1)
 
     snapshot = {
         "scraped_at": datetime.now(TZ).isoformat(),
