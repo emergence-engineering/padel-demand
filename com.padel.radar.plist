@@ -7,7 +7,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/gergelygillay/Desktop/Claude/Padel piackutatás /run_daily.sh</string>
+    <string>/Users/gergelygillay/padel-demand/run_daily.sh</string>
   </array>
   <!-- Naponta kétszer: 10:00 (a reggeli foglalási hullám után)
        és 17:00 (az esti csúcs előtti, majdnem végleges állapot) -->

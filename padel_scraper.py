@@ -51,11 +51,19 @@ PRIME = (17, 22)       # prime time window, local hours [start, end)
 CORE = (7, 23)         # core daytime window used for the headline metric
 
 
+# Python 3.13+ enables VERIFY_X509_STRICT, which rejects Playtomic's CDN cert
+# chain ("Basic Constraints of CA cert not marked critical"). Keep normal
+# certificate verification but drop the strict extension checks.
+import ssl
+_SSL_CTX = ssl.create_default_context()
+_SSL_CTX.verify_flags &= ~getattr(ssl, "VERIFY_X509_STRICT", 0)
+
+
 def fetch(url, retries=3, timeout=30):
     req = urllib.request.Request(url, headers=HEADERS)
     for attempt in range(retries):
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as r:
+            with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CTX) as r:
                 return r.read().decode("utf-8", errors="replace")
         except (urllib.error.URLError, TimeoutError) as e:
             if attempt == retries - 1:
