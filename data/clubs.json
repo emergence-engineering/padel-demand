@@ -26,19 +26,7 @@
    "ed7683da-ab06-4e85-874a-11ed7791d724"
   ],
   "opening_hours": {
-   "TUESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "23:00"
-   },
-   "FRIDAY": {
-    "opening_time": "08:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
+   "MONDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
@@ -46,7 +34,19 @@
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "FRIDAY": {
+    "opening_time": "08:00",
+    "closing_time": "23:00"
+   },
+   "TUESDAY": {
+    "opening_time": "08:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "08:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
@@ -84,18 +84,6 @@
    "0c1e9ccd-041e-42aa-b453-e4755926f25b"
   ],
   "opening_hours": {
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "HOLIDAYS": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
    "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
@@ -104,15 +92,27 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
+   "SUNDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
    "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
    "SATURDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    }
@@ -145,11 +145,11 @@
    "68f9811a-b478-41e6-a26a-1375989f0186"
   ],
   "opening_hours": {
-   "WEDNESDAY": {
+   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -161,7 +161,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -169,7 +169,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "SUNDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -199,7 +199,7 @@
    "d457adca-b515-474f-ae59-e86fc86dbf2b"
   ],
   "opening_hours": {
-   "FRIDAY": {
+   "TUESDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -207,23 +207,23 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
-   "WEDNESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "SATURDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
    "SUNDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
-   "TUESDAY": {
+   "WEDNESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "FRIDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
    "THURSDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "SATURDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    }
@@ -254,12 +254,24 @@
    "04e15750-13ea-47d8-9162-9321ddcac1d2"
   ],
   "opening_hours": {
+   "SUNDAY": {
+    "opening_time": "07:30",
+    "closing_time": "22:00"
+   },
    "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "SUNDAY": {
-    "opening_time": "07:30",
+   "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "MONDAY": {
+    "opening_time": "07:00",
     "closing_time": "22:00"
    },
    "WEDNESDAY": {
@@ -270,19 +282,7 @@
     "opening_time": "07:30",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "HOLIDAYS": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
    "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -312,7 +312,7 @@
    "26eb184e-ccff-4ae9-b515-3289a0791c2e"
   ],
   "opening_hours": {
-   "TUESDAY": {
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -320,19 +320,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "HOLIDAYS": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "MONDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "SATURDAY": {
+   "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -341,6 +329,18 @@
     "closing_time": "23:00"
    },
    "SUNDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -371,7 +371,7 @@
    "54307cd4-047b-4842-9a4d-4699d705b2b9"
   ],
   "opening_hours": {
-   "FRIDAY": {
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -379,11 +379,7 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "SATURDAY": {
+   "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -391,11 +387,15 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
+   "SATURDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "THURSDAY": {
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -426,7 +426,7 @@
    "39cd665f-5b1e-49b5-b7fb-9a80ac9998de"
   ],
   "opening_hours": {
-   "FRIDAY": {
+   "TUESDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -434,23 +434,23 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "WEDNESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SATURDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
    "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
+   "WEDNESDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "FRIDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
    "THURSDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "SATURDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    }
@@ -481,11 +481,11 @@
    "3af077cc-67b1-4af0-8c81-62d814d5dac2"
   ],
   "opening_hours": {
-   "THURSDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "SUNDAY": {
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -497,15 +497,15 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
+   "SUNDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
    "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "MONDAY": {
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -536,11 +536,7 @@
    "710c1f82-e0c2-42df-ac13-febebb6f7c26"
   ],
   "opening_hours": {
-   "TUESDAY": {
-    "opening_time": "05:00",
-    "closing_time": "00:00"
-   },
-   "FRIDAY": {
+   "THURSDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
@@ -552,15 +548,19 @@
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
-   "THURSDAY": {
+   "SATURDAY": {
+    "opening_time": "05:00",
+    "closing_time": "00:00"
+   },
+   "TUESDAY": {
+    "opening_time": "05:00",
+    "closing_time": "00:00"
+   },
+   "FRIDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
    "MONDAY": {
-    "opening_time": "05:00",
-    "closing_time": "00:00"
-   },
-   "SATURDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    }
@@ -590,11 +590,15 @@
    "23394505-68d4-4c03-ac59-4113089e2fde"
   ],
   "opening_hours": {
-   "TUESDAY": {
+   "FRIDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "MONDAY": {
+   "SATURDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "WEDNESDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -606,19 +610,15 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "WEDNESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "FRIDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
    "THURSDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "SATURDAY": {
+   "MONDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "TUESDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    }
@@ -705,15 +705,11 @@
    "4a15b191-b2ff-4830-b613-2633de68cb1a"
   ],
   "opening_hours": {
+   "FRIDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
    "SATURDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "TUESDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -721,15 +717,19 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
+   "SUNDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
    "THURSDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
+   "MONDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "TUESDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    }
@@ -841,7 +841,7 @@
    "2a021b96-54da-4e46-a668-e719c6ebd0d5"
   ],
   "opening_hours": {
-   "TUESDAY": {
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -849,11 +849,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "SUNDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
+   "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -861,11 +857,15 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
    "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -896,7 +896,7 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "SATURDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -904,19 +904,19 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "SATURDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
    "SUNDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "TUESDAY": {
+   "THURSDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
+   "MONDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "TUESDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    }
