@@ -1,0 +1,12 @@
+slug,name,date,weekday,courts,data_ok,occ_open_pct,occ_core_pct,occ_prime_pct,open_court_hours,free_court_hours_open,core_court_hours,free_court_hours_core,prime_court_hours,free_court_hours_prime
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-04,Friday,1,True,11.1,11.1,0.0,9.0,8.0,9.0,8.0,5.0,5.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-05,Saturday,1,True,29.4,25.0,40.0,17.0,12.0,16.0,12.0,5.0,3.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-06,Sunday,1,True,29.4,25.0,40.0,17.0,12.0,16.0,12.0,5.0,3.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-07,Monday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-08,Tuesday,1,True,17.6,12.5,0.0,17.0,14.0,16.0,14.0,5.0,5.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-09,Wednesday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+new-padel-club,New Padel Club,2026-09-10,Thursday,2,True,14.9,21.9,20.0,47.0,40.0,32.0,25.0,10.0,8.0
+future-padel-fot,Future Padel Fót,2026-09-10,Thursday,1,True,12.5,12.5,20.0,16.0,14.0,16.0,14.0,5.0,4.0
+zenith-padel-club,Zenith Padel Club,2026-09-10,Thursday,3,True,11.8,12.5,30.0,51.0,45.0,48.0,42.0,15.0,10.5
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-10,Thursday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+musketas-padel,Musketas Padel ,2026-09-10,Thursday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
