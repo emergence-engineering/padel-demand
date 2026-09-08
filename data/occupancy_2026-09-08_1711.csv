@@ -1,0 +1,127 @@
+slug,name,date,weekday,courts,data_ok,occ_open_pct,occ_core_pct,occ_prime_pct,open_court_hours,free_court_hours_open,core_court_hours,free_court_hours_core,prime_court_hours,free_court_hours_prime
+buda-padel,BUDAPADEL,2026-09-08,Tuesday,4,True,89.6,100.0,100.0,24.0,2.5,20.0,0.0,16.0,0.0
+top-padel-club-budapest,Top Padel Club ,2026-09-08,Tuesday,7,True,100.0,100.0,100.0,35.0,0.0,35.0,0.0,28.0,0.0
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-08,Tuesday,4,True,100.0,100.0,100.0,16.0,0.0,16.0,0.0,16.0,0.0
+padel-king-savoya,Padel King Savoya,2026-09-08,Tuesday,6,True,96.7,96.7,95.8,30.0,1.0,30.0,1.0,24.0,1.0
+new-padel-club,New Padel Club,2026-09-08,Tuesday,2,True,81.8,90.0,100.0,11.0,2.0,10.0,1.0,8.0,0.0
+premier-padel-park,Premier Padel Park,2026-09-08,Tuesday,4,True,87.5,87.5,96.9,20.0,2.5,20.0,2.5,16.0,0.5
+budapest-padel,Budapest Padel,2026-09-08,Tuesday,8,True,86.2,86.2,95.3,40.0,5.5,40.0,5.5,32.0,1.5
+future-padel-fot,Future Padel Fót,2026-09-08,Tuesday,1,True,80.0,80.0,75.0,5.0,1.0,5.0,1.0,4.0,1.0
+padel-garden-budapest,Padel Garden Budapest,2026-09-08,Tuesday,3,True,77.8,77.8,83.3,13.5,3.0,13.5,3.0,12.0,2.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-08,Tuesday,4,True,75.0,75.0,75.0,16.0,4.0,16.0,4.0,16.0,4.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-08,Tuesday,4,True,60.4,72.5,75.0,24.0,9.5,20.0,5.5,16.0,4.0
+flow-padel-ujpest,Flow Padel Újpest,2026-09-08,Tuesday,4,True,68.8,68.8,68.8,16.0,5.0,16.0,5.0,16.0,5.0
+duna-padel,DUNA PADEL,2026-09-08,Tuesday,4,True,67.5,67.5,84.4,20.0,6.5,20.0,6.5,16.0,2.5
+grand-slam-padel,Grand Slam Padel,2026-09-08,Tuesday,3,True,66.7,66.7,66.7,12.0,4.0,12.0,4.0,12.0,4.0
+zenith-padel-club,Zenith Padel Club,2026-09-08,Tuesday,3,True,66.7,66.7,83.3,15.0,5.0,15.0,5.0,12.0,2.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-08,Tuesday,1,True,20.0,20.0,0.0,5.0,4.0,5.0,4.0,4.0,4.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-08,Tuesday,3,False,,,,18.0,0.0,15.0,0.0,12.0,0.0
+musketas-padel,Musketas Padel ,2026-09-08,Tuesday,2,False,,,,12.0,0.0,10.0,0.0,8.0,0.0
+top-padel-club-budapest,Top Padel Club ,2026-09-09,Wednesday,7,True,100.0,100.0,100.0,112.0,0.0,112.0,0.0,35.0,0.0
+premier-padel-park,Premier Padel Park,2026-09-09,Wednesday,4,True,82.0,82.0,97.5,64.0,11.5,64.0,11.5,20.0,0.5
+padel-garden-budapest,Padel Garden Budapest,2026-09-09,Wednesday,3,True,54.3,54.3,63.3,40.5,18.5,40.5,18.5,15.0,5.5
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-09,Wednesday,4,True,52.5,52.5,92.5,60.0,28.5,60.0,28.5,20.0,1.5
+flow-padel-ujpest,Flow Padel Újpest,2026-09-09,Wednesday,4,True,45.8,45.8,72.5,60.0,32.5,60.0,32.5,20.0,5.5
+buda-padel,BUDAPADEL,2026-09-09,Wednesday,4,True,29.7,44.5,75.0,96.0,67.5,64.0,35.5,20.0,5.0
+duna-padel,DUNA PADEL,2026-09-09,Wednesday,4,True,40.6,40.6,70.0,64.0,38.0,64.0,38.0,20.0,6.0
+future-padel-fot,Future Padel Fót,2026-09-09,Wednesday,1,True,40.6,40.6,80.0,16.0,9.5,16.0,9.5,5.0,1.0
+budapest-padel,Budapest Padel,2026-09-09,Wednesday,8,True,38.3,38.3,70.0,120.0,74.0,120.0,74.0,40.0,12.0
+zenith-padel-club,Zenith Padel Club,2026-09-09,Wednesday,3,True,30.4,32.3,76.7,51.0,35.5,48.0,32.5,15.0,3.5
+padel-king-savoya,Padel King Savoya,2026-09-09,Wednesday,6,True,29.7,29.7,70.0,96.0,67.5,96.0,67.5,30.0,9.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-09,Wednesday,4,True,29.5,29.5,52.5,56.0,39.5,56.0,39.5,20.0,9.5
+grand-slam-padel,Grand Slam Padel,2026-09-09,Wednesday,3,True,26.2,26.2,73.3,42.0,31.0,42.0,31.0,15.0,4.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-09,Wednesday,4,True,21.7,25.8,57.5,76.0,59.5,64.0,47.5,20.0,8.5
+new-padel-club,New Padel Club,2026-09-09,Wednesday,2,True,10.6,15.6,40.0,47.0,42.0,32.0,27.0,10.0,6.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-09,Wednesday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-09,Wednesday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+musketas-padel,Musketas Padel ,2026-09-09,Wednesday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
+top-padel-club-budapest,Top Padel Club ,2026-09-10,Thursday,7,True,100.0,100.0,100.0,112.0,0.0,112.0,0.0,35.0,0.0
+premier-padel-park,Premier Padel Park,2026-09-10,Thursday,4,True,88.3,88.3,87.5,64.0,7.5,64.0,7.5,20.0,2.5
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-10,Thursday,4,True,42.5,42.5,95.0,60.0,34.5,60.0,34.5,20.0,1.0
+padel-king-savoya,Padel King Savoya,2026-09-10,Thursday,6,True,35.9,35.9,65.0,96.0,61.5,96.0,61.5,30.0,10.5
+padel-garden-budapest,Padel Garden Budapest,2026-09-10,Thursday,3,True,34.6,34.6,73.3,40.5,26.5,40.5,26.5,15.0,4.0
+flow-padel-ujpest,Flow Padel Újpest,2026-09-10,Thursday,4,True,34.2,34.2,30.0,60.0,39.5,60.0,39.5,20.0,14.0
+buda-padel,BUDAPADEL,2026-09-10,Thursday,4,True,21.9,32.8,65.0,96.0,75.0,64.0,43.0,20.0,7.0
+zenith-padel-club,Zenith Padel Club,2026-09-10,Thursday,3,True,27.5,29.2,60.0,51.0,37.0,48.0,34.0,15.0,6.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-10,Thursday,4,True,27.7,27.7,47.5,56.0,40.5,56.0,40.5,20.0,10.5
+duna-padel,DUNA PADEL,2026-09-10,Thursday,4,True,27.3,27.3,50.0,64.0,46.5,64.0,46.5,20.0,10.0
+budapest-padel,Budapest Padel,2026-09-10,Thursday,8,True,25.4,25.4,50.0,120.0,89.5,120.0,89.5,40.0,20.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-10,Thursday,4,True,21.1,25.0,60.0,76.0,60.0,64.0,48.0,20.0,8.0
+grand-slam-padel,Grand Slam Padel,2026-09-10,Thursday,3,True,17.9,17.9,50.0,42.0,34.5,42.0,34.5,15.0,7.5
+new-padel-club,New Padel Club,2026-09-10,Thursday,2,True,6.4,9.4,20.0,47.0,44.0,32.0,29.0,10.0,8.0
+future-padel-fot,Future Padel Fót,2026-09-10,Thursday,1,True,6.2,6.2,0.0,16.0,15.0,16.0,15.0,5.0,5.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-10,Thursday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-10,Thursday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+musketas-padel,Musketas Padel ,2026-09-10,Thursday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
+top-padel-club-budapest,Top Padel Club ,2026-09-11,Friday,7,True,100.0,100.0,100.0,112.0,0.0,112.0,0.0,35.0,0.0
+premier-padel-park,Premier Padel Park,2026-09-11,Friday,4,True,72.7,72.7,80.0,64.0,17.5,64.0,17.5,20.0,4.0
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-11,Friday,4,True,52.5,52.5,52.5,60.0,28.5,60.0,28.5,20.0,9.5
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-11,Friday,4,True,47.3,47.3,55.0,56.0,29.5,56.0,29.5,20.0,9.0
+duna-padel,DUNA PADEL,2026-09-11,Friday,4,True,43.0,43.0,50.0,64.0,36.5,64.0,36.5,20.0,10.0
+flow-padel-ujpest,Flow Padel Újpest,2026-09-11,Friday,4,True,31.7,31.7,57.5,60.0,41.0,60.0,41.0,20.0,8.5
+future-padel-fot,Future Padel Fót,2026-09-11,Friday,1,True,31.2,31.2,60.0,16.0,11.0,16.0,11.0,5.0,2.0
+buda-padel,BUDAPADEL,2026-09-11,Friday,4,True,18.8,28.1,57.5,96.0,78.0,64.0,46.0,20.0,8.5
+padel-garden-budapest,Padel Garden Budapest,2026-09-11,Friday,3,True,19.8,19.8,40.0,40.5,32.5,40.5,32.5,15.0,9.0
+budapest-padel,Budapest Padel,2026-09-11,Friday,8,True,19.2,19.2,25.0,120.0,97.0,120.0,97.0,40.0,30.0
+grand-slam-padel,Grand Slam Padel,2026-09-11,Friday,3,True,19.0,19.0,46.7,42.0,34.0,42.0,34.0,15.0,8.0
+padel-king-savoya,Padel King Savoya,2026-09-11,Friday,6,True,15.1,15.1,20.0,96.0,81.5,96.0,81.5,30.0,24.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-11,Friday,4,True,10.5,12.5,12.5,76.0,68.0,64.0,56.0,20.0,17.5
+zenith-padel-club,Zenith Padel Club,2026-09-11,Friday,3,True,10.8,11.5,0.0,51.0,45.5,48.0,42.5,15.0,15.0
+new-padel-club,New Padel Club,2026-09-11,Friday,2,True,4.3,6.2,20.0,47.0,45.0,32.0,30.0,10.0,8.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-11,Friday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-11,Friday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+musketas-padel,Musketas Padel ,2026-09-11,Friday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
+top-padel-club-budapest,Top Padel Club ,2026-09-12,Saturday,7,True,100.0,100.0,100.0,98.0,0.0,98.0,0.0,35.0,0.0
+buda-padel,BUDAPADEL,2026-09-12,Saturday,4,True,33.3,50.0,85.0,96.0,64.0,64.0,32.0,20.0,3.0
+future-padel-fot,Future Padel Fót,2026-09-12,Saturday,1,True,37.5,37.5,0.0,16.0,10.0,16.0,10.0,5.0,5.0
+premier-padel-park,Premier Padel Park,2026-09-12,Saturday,4,True,29.7,29.7,10.0,64.0,45.0,64.0,45.0,20.0,18.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-12,Saturday,4,True,28.6,28.6,0.0,56.0,40.0,56.0,40.0,20.0,20.0
+flow-padel-ujpest,Flow Padel Újpest,2026-09-12,Saturday,4,True,28.3,28.3,0.0,60.0,43.0,60.0,43.0,20.0,20.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-12,Saturday,1,True,29.4,25.0,40.0,17.0,12.0,16.0,12.0,5.0,3.0
+padel-garden-budapest,Padel Garden Budapest,2026-09-12,Saturday,3,True,7.4,7.4,0.0,40.5,37.5,40.5,37.5,15.0,15.0
+duna-padel,DUNA PADEL,2026-09-12,Saturday,4,True,7.0,7.0,5.0,64.0,59.5,64.0,59.5,20.0,19.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-12,Saturday,4,True,5.3,6.2,0.0,76.0,72.0,64.0,60.0,20.0,20.0
+budapest-padel,Budapest Padel,2026-09-12,Saturday,8,True,5.8,5.8,0.0,120.0,113.0,120.0,113.0,40.0,40.0
+padel-king-savoya,Padel King Savoya,2026-09-12,Saturday,6,True,5.2,5.2,0.0,96.0,91.0,96.0,91.0,30.0,30.0
+grand-slam-padel,Grand Slam Padel,2026-09-12,Saturday,3,True,0.0,0.0,0.0,42.0,42.0,42.0,42.0,15.0,15.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-12,Saturday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+zenith-padel-club,Zenith Padel Club,2026-09-12,Saturday,3,True,0.0,0.0,0.0,51.0,51.0,48.0,48.0,15.0,15.0
+musketas-padel,Musketas Padel ,2026-09-12,Saturday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
+new-padel-club,New Padel Club,2026-09-12,Saturday,2,True,0.0,0.0,0.0,47.0,47.0,32.0,32.0,10.0,10.0
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-12,Saturday,4,True,0.0,0.0,0.0,58.0,58.0,58.0,58.0,20.0,20.0
+top-padel-club-budapest,Top Padel Club ,2026-09-13,Sunday,7,True,100.0,100.0,100.0,98.0,0.0,98.0,0.0,35.0,0.0
+grand-slam-padel,Grand Slam Padel,2026-09-13,Sunday,3,True,33.3,33.3,33.3,39.0,26.0,39.0,26.0,12.0,8.0
+padel-king-savoya,Padel King Savoya,2026-09-13,Sunday,6,True,27.6,27.6,0.0,96.0,69.5,96.0,69.5,30.0,30.0
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-13,Sunday,1,True,29.4,25.0,40.0,17.0,12.0,16.0,12.0,5.0,3.0
+premier-padel-park,Premier Padel Park,2026-09-13,Sunday,4,True,23.4,23.4,30.0,64.0,49.0,64.0,49.0,20.0,14.0
+buda-padel,BUDAPADEL,2026-09-13,Sunday,4,True,9.9,14.8,20.0,96.0,86.5,64.0,54.5,20.0,16.0
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-13,Sunday,4,True,12.9,12.9,37.5,58.0,50.5,58.0,50.5,20.0,12.5
+future-padel-fot,Future Padel Fót,2026-09-13,Sunday,1,True,12.5,12.5,0.0,16.0,14.0,16.0,14.0,5.0,5.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-13,Sunday,4,True,11.6,11.6,7.5,56.0,49.5,56.0,49.5,20.0,18.5
+budapest-padel,Budapest Padel,2026-09-13,Sunday,8,True,10.4,10.4,12.5,120.0,107.5,120.0,107.5,40.0,35.0
+padel-garden-budapest,Padel Garden Budapest,2026-09-13,Sunday,3,True,8.6,8.6,6.7,40.5,37.0,40.5,37.0,15.0,14.0
+duna-padel,DUNA PADEL,2026-09-13,Sunday,4,True,3.9,3.9,0.0,64.0,61.5,64.0,61.5,20.0,20.0
+zenith-padel-club,Zenith Padel Club,2026-09-13,Sunday,3,True,2.9,3.1,0.0,51.0,49.5,48.0,46.5,15.0,15.0
+new-padel-club,New Padel Club,2026-09-13,Sunday,2,True,2.1,3.1,0.0,47.0,46.0,32.0,31.0,10.0,10.0
+flow-padel-ujpest,Flow Padel Újpest,2026-09-13,Sunday,4,True,2.5,2.5,0.0,60.0,58.5,60.0,58.5,20.0,20.0
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-13,Sunday,4,True,0.0,0.0,0.0,76.0,76.0,64.0,64.0,20.0,20.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-13,Sunday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+musketas-padel,Musketas Padel ,2026-09-13,Sunday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
+premier-padel-park,Premier Padel Park,2026-09-14,Monday,4,True,57.0,57.0,87.5,64.0,27.5,64.0,27.5,20.0,2.5
+padel-garden-budapest,Padel Garden Budapest,2026-09-14,Monday,3,True,30.9,30.9,70.0,40.5,28.0,40.5,28.0,15.0,4.5
+budapest-padel,Budapest Padel,2026-09-14,Monday,8,True,30.0,30.0,70.0,120.0,84.0,120.0,84.0,40.0,12.0
+bvsc-padel-clubfirst-club-in-pest,BVSC Padel club|First club in Pest!,2026-09-14,Monday,4,True,29.2,29.2,77.5,60.0,42.5,60.0,42.5,20.0,4.5
+flow-padel-ujpest,Flow Padel Újpest,2026-09-14,Monday,4,True,23.3,23.3,32.5,60.0,46.0,60.0,46.0,20.0,13.5
+buda-padel,BUDAPADEL,2026-09-14,Monday,4,True,12.5,18.8,52.5,96.0,84.0,64.0,52.0,20.0,9.5
+future-padel-fot,Future Padel Fót,2026-09-14,Monday,1,True,18.8,18.8,40.0,16.0,13.0,16.0,13.0,5.0,3.0
+premier-padel-nagyret,Premier Padel Nagyret,2026-09-14,Monday,4,True,17.9,17.9,35.0,56.0,46.0,56.0,46.0,20.0,13.0
+new-padel-club,New Padel Club,2026-09-14,Monday,2,True,11.7,17.2,15.0,47.0,41.5,32.0,26.5,10.0,8.5
+top-padel-club-budapest,Top Padel Club ,2026-09-14,Monday,7,True,16.5,16.5,30.0,112.0,93.5,112.0,93.5,35.0,24.5
+duna-padel,DUNA PADEL,2026-09-14,Monday,4,True,14.1,14.1,37.5,64.0,55.0,64.0,55.0,20.0,12.5
+zenith-padel-club,Zenith Padel Club,2026-09-14,Monday,3,True,6.9,7.3,10.0,51.0,47.5,48.0,44.5,15.0,13.5
+zenith-padel-obuda,Zenith Padel Óbuda ÚJ!,2026-09-14,Monday,4,True,5.3,6.2,17.5,76.0,72.0,64.0,60.0,20.0,16.5
+panorama-padel-budapest,Panorama Padel Budapest,2026-09-14,Monday,1,True,11.8,6.2,0.0,17.0,15.0,16.0,15.0,5.0,5.0
+padel-king-savoya,Padel King Savoya,2026-09-14,Monday,6,True,0.0,0.0,0.0,96.0,96.0,96.0,96.0,30.0,30.0
+grand-slam-padel,Grand Slam Padel,2026-09-14,Monday,3,True,0.0,0.0,0.0,42.0,42.0,42.0,42.0,15.0,15.0
+padel-bros-budapest,Padel Bros Budapest,2026-09-14,Monday,3,False,,,,72.0,0.0,48.0,0.0,15.0,0.0
+musketas-padel,Musketas Padel ,2026-09-14,Monday,2,False,,,,48.0,0.0,32.0,0.0,10.0,0.0
