@@ -26,11 +26,11 @@
    "ed7683da-ab06-4e85-874a-11ed7791d724"
   ],
   "opening_hours": {
-   "THURSDAY": {
+   "MONDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "FRIDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
@@ -38,15 +38,15 @@
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "23:00"
-   },
    "WEDNESDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
+   "THURSDAY": {
+    "opening_time": "08:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
@@ -84,22 +84,6 @@
    "0c1e9ccd-041e-42aa-b453-e4755926f25b"
   ],
   "opening_hours": {
-   "THURSDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "MONDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "SATURDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
    "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
@@ -108,13 +92,29 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
+   "SATURDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
    "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
    "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
+   },
+   "SUNDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
    }
   },
   "km_from_center": 1.9
@@ -145,7 +145,7 @@
    "68f9811a-b478-41e6-a26a-1375989f0186"
   ],
   "opening_hours": {
-   "SATURDAY": {
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -153,7 +153,15 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -161,15 +169,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
    "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -199,11 +199,15 @@
    "d457adca-b515-474f-ae59-e86fc86dbf2b"
   ],
   "opening_hours": {
+   "WEDNESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
    "MONDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
-   "FRIDAY": {
+   "TUESDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -215,15 +219,11 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
+   "FRIDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
    "SUNDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "TUESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "WEDNESDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    }
@@ -254,15 +254,15 @@
    "04e15750-13ea-47d8-9162-9321ddcac1d2"
   ],
   "opening_hours": {
-   "SATURDAY": {
-    "opening_time": "07:30",
-    "closing_time": "22:00"
-   },
-   "FRIDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
    "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "HOLIDAYS": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -274,11 +274,11 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "HOLIDAYS": {
-    "opening_time": "07:00",
+   "SATURDAY": {
+    "opening_time": "07:30",
     "closing_time": "22:00"
    },
-   "WEDNESDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -312,6 +312,18 @@
    "26eb184e-ccff-4ae9-b515-3289a0791c2e"
   ],
   "opening_hours": {
+   "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
    "SATURDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
@@ -324,23 +336,11 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
    "HOLIDAYS": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -370,11 +370,15 @@
    "5aaab392-3ec2-4cad-a6f4-585c95666fb6"
   ],
   "opening_hours": {
-   "THURSDAY": {
+   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "MONDAY": {
+   "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -386,15 +390,11 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
    "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -425,15 +425,19 @@
    "54307cd4-047b-4842-9a4d-4699d705b2b9"
   ],
   "opening_hours": {
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
    "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "THURSDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -445,11 +449,7 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "WEDNESDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -480,15 +480,7 @@
    "aaed8ad8-c80a-43a9-967e-97ef90f826b2"
   ],
   "opening_hours": {
-   "SATURDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "FRIDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "MONDAY": {
+   "THURSDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -496,7 +488,7 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
-   "THURSDAY": {
+   "MONDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -504,9 +496,17 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
+   "SATURDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
    "SUNDAY": {
     "opening_time": "00:00",
     "closing_time": "23:30"
+   },
+   "FRIDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
    }
   },
   "km_from_center": 9.0
@@ -535,11 +535,11 @@
    "39cd665f-5b1e-49b5-b7fb-9a80ac9998de"
   ],
   "opening_hours": {
-   "MONDAY": {
+   "THURSDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "SUNDAY": {
+   "MONDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -547,7 +547,7 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
+   "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -559,7 +559,7 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "THURSDAY": {
+   "TUESDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    }
@@ -649,15 +649,11 @@
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
-   "MONDAY": {
+   "SUNDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
    "SATURDAY": {
-    "opening_time": "05:00",
-    "closing_time": "00:00"
-   },
-   "SUNDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
@@ -666,6 +662,10 @@
     "closing_time": "00:00"
    },
    "FRIDAY": {
+    "opening_time": "05:00",
+    "closing_time": "00:00"
+   },
+   "MONDAY": {
     "opening_time": "05:00",
     "closing_time": "00:00"
    },
@@ -703,17 +703,17 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "MONDAY": {
+   "SUNDAY": {
+    "opening_time": "08:00",
+    "closing_time": "21:00"
+   },
+   "HOLIDAYS": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
    "SATURDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
-   },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "21:00"
    },
    "WEDNESDAY": {
     "opening_time": "08:00",
@@ -723,7 +723,7 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "HOLIDAYS": {
+   "MONDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -733,63 +733,6 @@
    }
   },
   "km_from_center": 6.4
- },
- {
-  "slug": "padel-garden-budapest",
-  "tenant_id": "a10584da-2c4e-4c47-a3d8-d630b7b3606e",
-  "name": "Padel Garden Budapest",
-  "city": "Budapest",
-  "street": "Római part 28",
-  "postal_code": "1031",
-  "country_code": "HU",
-  "lat": 47.5710527,
-  "lon": 19.0651195,
-  "courts": 3,
-  "court_features": [
-   "crystal",
-   "double",
-   "outdoor"
-  ],
-  "resource_ids": [
-   "1aadf863-a978-44a2-8ca5-bbcb7ac693ad",
-   "38a14819-c481-4721-8e0e-a77a23252f39",
-   "a2d4827f-10e9-4419-97b5-8f089d6e0173"
-  ],
-  "opening_hours": {
-   "THURSDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "TUESDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "MONDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "HOLIDAYS": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "SATURDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "SUNDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   },
-   "FRIDAY": {
-    "opening_time": "09:00",
-    "closing_time": "21:00"
-   }
-  },
-  "km_from_center": 8.3
  },
  {
   "slug": "padel-bros-budapest",
@@ -814,22 +757,6 @@
    "c817a6ce-601f-4b7d-8e31-ce734e56c351"
   ],
   "opening_hours": {
-   "THURSDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "TUESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "MONDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
    "SATURDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
@@ -838,12 +765,85 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
+   "TUESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "THURSDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
    "FRIDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "MONDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    }
   },
   "km_from_center": 12.6
+ },
+ {
+  "slug": "padel-garden-budapest",
+  "tenant_id": "a10584da-2c4e-4c47-a3d8-d630b7b3606e",
+  "name": "Padel Garden Budapest",
+  "city": "Budapest",
+  "street": "Római part 28",
+  "postal_code": "1031",
+  "country_code": "HU",
+  "lat": 47.5710527,
+  "lon": 19.0651195,
+  "courts": 3,
+  "court_features": [
+   "crystal",
+   "double",
+   "outdoor"
+  ],
+  "resource_ids": [
+   "1aadf863-a978-44a2-8ca5-bbcb7ac693ad",
+   "38a14819-c481-4721-8e0e-a77a23252f39",
+   "a2d4827f-10e9-4419-97b5-8f089d6e0173"
+  ],
+  "opening_hours": {
+   "SATURDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "SUNDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "TUESDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "THURSDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "FRIDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "HOLIDAYS": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   },
+   "MONDAY": {
+    "opening_time": "09:00",
+    "closing_time": "21:00"
+   }
+  },
+  "km_from_center": 8.3
  },
  {
   "slug": "zenith-padel-club",
@@ -872,19 +872,11 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "THURSDAY": {
+   "SUNDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
    "SATURDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -893,6 +885,14 @@
     "closing_time": "23:00"
    },
    "WEDNESDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "THURSDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    }
@@ -949,11 +949,15 @@
    "8664ccb2-83b1-4f04-878e-037bc46c9bbc"
   ],
   "opening_hours": {
-   "SATURDAY": {
+   "WEDNESDAY": {
     "opening_time": "00:00",
     "closing_time": "23:30"
    },
-   "SUNDAY": {
+   "MONDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
+   "HOLIDAYS": {
     "opening_time": "00:00",
     "closing_time": "23:30"
    },
@@ -965,7 +969,7 @@
     "opening_time": "00:00",
     "closing_time": "23:30"
    },
-   "WEDNESDAY": {
+   "SATURDAY": {
     "opening_time": "00:00",
     "closing_time": "23:30"
    },
@@ -973,11 +977,7 @@
     "opening_time": "00:00",
     "closing_time": "23:30"
    },
-   "HOLIDAYS": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "MONDAY": {
+   "SUNDAY": {
     "opening_time": "00:00",
     "closing_time": "23:30"
    }
@@ -1004,7 +1004,11 @@
    "2a021b96-54da-4e46-a668-e719c6ebd0d5"
   ],
   "opening_hours": {
-   "WEDNESDAY": {
+   "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -1020,11 +1024,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "SATURDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "FRIDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -1055,23 +1055,7 @@
    "c1a73b0e-b1fc-4c85-b7df-c4bc762fa430"
   ],
   "opening_hours": {
-   "THURSDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "MONDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
    "SATURDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -1079,7 +1063,23 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
+   "MONDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
    "TUESDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "THURSDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "06:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    }
