@@ -26,10 +26,6 @@
    "ed7683da-ab06-4e85-874a-11ed7791d724"
   ],
   "opening_hours": {
-   "MONDAY": {
-    "opening_time": "08:00",
-    "closing_time": "23:00"
-   },
    "SUNDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
@@ -38,15 +34,19 @@
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
+   "FRIDAY": {
+    "opening_time": "08:00",
+    "closing_time": "23:00"
+   },
    "WEDNESDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
+   "MONDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
+   "THURSDAY": {
     "opening_time": "08:00",
     "closing_time": "23:00"
    },
@@ -84,6 +84,18 @@
    "0c1e9ccd-041e-42aa-b453-e4755926f25b"
   ],
   "opening_hours": {
+   "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
    "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
@@ -92,27 +104,15 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
    "SATURDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "HOLIDAYS": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
    "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "HOLIDAYS": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -177,6 +177,177 @@
   "km_from_center": 7.2
  },
  {
+  "slug": "buda-padel",
+  "tenant_id": "db389deb-abbc-403d-9240-99c8b02ab888",
+  "name": "BUDAPADEL",
+  "city": "Budapest",
+  "street": "Kunigunda útja 68.",
+  "postal_code": "1037",
+  "country_code": "HU",
+  "lat": 47.560675,
+  "lon": 19.03492,
+  "courts": 4,
+  "court_features": [
+   "Double",
+   "Indoor",
+   "Panoramic"
+  ],
+  "resource_ids": [
+   "ea55a57b-efb4-4cfc-9010-89ee01bff878",
+   "b58f6ff1-646d-4773-aca2-f00ded1ac6d2",
+   "77f211d9-56e4-42d4-83a6-d882afddb806",
+   "d457adca-b515-474f-ae59-e86fc86dbf2b"
+  ],
+  "opening_hours": {
+   "SUNDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "TUESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "FRIDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "MONDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "THURSDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "SATURDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   }
+  },
+  "km_from_center": 7.0
+ },
+ {
+  "slug": "bvsc-padel-clubfirst-club-in-pest",
+  "tenant_id": "7d47ba78-0759-407f-af14-d3a70cf5d080",
+  "name": "BVSC Padel club | First club in Pest!",
+  "city": "Budapest",
+  "street": "Tatai u. 85.",
+  "postal_code": "1142",
+  "country_code": "HU",
+  "lat": 47.5389446,
+  "lon": 19.0937661,
+  "courts": 4,
+  "court_features": [
+   "Crystal",
+   "Double",
+   "Outdoor",
+   "Panoramic"
+  ],
+  "resource_ids": [
+   "08b59114-2243-4103-98bf-79acebef61a2",
+   "afdbf716-c4a5-435f-ada7-988d4ccb82ab",
+   "375baaad-45a9-4428-99ff-c0ad177eda49",
+   "04e15750-13ea-47d8-9162-9321ddcac1d2"
+  ],
+  "opening_hours": {
+   "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "SATURDAY": {
+    "opening_time": "07:30",
+    "closing_time": "22:00"
+   },
+   "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "SUNDAY": {
+    "opening_time": "07:30",
+    "closing_time": "22:00"
+   },
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   }
+  },
+  "km_from_center": 6.1
+ },
+ {
+  "slug": "duna-padel",
+  "tenant_id": "848bf660-5e07-436a-a325-d306c2286bd7",
+  "name": "DUNA PADEL",
+  "city": "Budapest",
+  "street": "Gyár utca 15, M Csarnok",
+  "postal_code": "1222",
+  "country_code": "HU",
+  "lat": 47.4096466,
+  "lon": 19.0335013,
+  "courts": 4,
+  "court_features": [
+   "Double",
+   "Indoor",
+   "Panoramic"
+  ],
+  "resource_ids": [
+   "e484062f-5c06-4e02-ae2b-375ae9e13aab",
+   "0df8bfd6-7b19-46da-ba73-78633a2f52ed",
+   "f1f4aa40-5942-4082-b8a7-14e26180e90b",
+   "26eb184e-ccff-4ae9-b515-3289a0791c2e"
+  ],
+  "opening_hours": {
+   "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SUNDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "THURSDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "HOLIDAYS": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   }
+  },
+  "km_from_center": 9.8
+ },
+ {
   "slug": "cupra-padel-arena",
   "tenant_id": "63bc236f-349a-46fc-a218-448066c7c7fb",
   "name": "CUPRA Padel Arena",
@@ -199,23 +370,7 @@
    "5aaab392-3ec2-4cad-a6f4-585c95666fb6"
   ],
   "opening_hours": {
-   "SUNDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
    "TUESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -223,7 +378,23 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
+   "MONDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "SUNDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
    "SATURDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "WEDNESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -254,6 +425,10 @@
    "54307cd4-047b-4842-9a4d-4699d705b2b9"
   ],
   "opening_hours": {
+   "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "22:00"
+   },
    "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
@@ -262,11 +437,7 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "FRIDAY": {
-    "opening_time": "07:00",
-    "closing_time": "22:00"
-   },
-   "WEDNESDAY": {
+   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
@@ -274,11 +445,11 @@
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "SUNDAY": {
+   "WEDNESDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "22:00"
    }
@@ -309,7 +480,15 @@
    "aaed8ad8-c80a-43a9-967e-97ef90f826b2"
   ],
   "opening_hours": {
-   "MONDAY": {
+   "SUNDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
+   "TUESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "00:00"
+   },
+   "FRIDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -317,11 +496,7 @@
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
-   "SUNDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "TUESDAY": {
+   "MONDAY": {
     "opening_time": "00:00",
     "closing_time": "00:00"
    },
@@ -332,10 +507,6 @@
    "SATURDAY": {
     "opening_time": "00:00",
     "closing_time": "23:30"
-   },
-   "FRIDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
    }
   },
   "km_from_center": 9.0
@@ -364,11 +535,7 @@
    "39cd665f-5b1e-49b5-b7fb-9a80ac9998de"
   ],
   "opening_hours": {
-   "FRIDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SUNDAY": {
+   "THURSDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -376,11 +543,7 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "TUESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SATURDAY": {
+   "FRIDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
@@ -388,7 +551,15 @@
     "opening_time": "08:00",
     "closing_time": "22:00"
    },
-   "THURSDAY": {
+   "SATURDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "SUNDAY": {
+    "opening_time": "08:00",
+    "closing_time": "22:00"
+   },
+   "TUESDAY": {
     "opening_time": "08:00",
     "closing_time": "22:00"
    }
@@ -427,10 +598,6 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   },
    "MONDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
@@ -439,11 +606,15 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "FRIDAY": {
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
    "TUESDAY": {
+    "opening_time": "07:00",
+    "closing_time": "23:00"
+   },
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -506,118 +677,6 @@
   "km_from_center": 6.3
  },
  {
-  "slug": "grand-slam-padel",
-  "tenant_id": "34f97846-6ad5-4deb-8b60-d5b57c3065f2",
-  "name": "Grand Slam Padel",
-  "city": "Budapest",
-  "street": "Kapolcs utca 2/A",
-  "postal_code": "1112",
-  "country_code": "HU",
-  "lat": 47.44492432,
-  "lon": 19.00741409,
-  "courts": 3,
-  "court_features": [
-   "Crystal",
-   "Double",
-   "Indoor",
-   "Outdoor"
-  ],
-  "resource_ids": [
-   "d07eed33-63dc-41e4-95ff-ff5e40c76fce",
-   "2fb3281f-6373-46b7-90d9-14446afed84a",
-   "23394505-68d4-4c03-ac59-4113089e2fde"
-  ],
-  "opening_hours": {
-   "FRIDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SUNDAY": {
-    "opening_time": "08:00",
-    "closing_time": "21:00"
-   },
-   "MONDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "HOLIDAYS": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "TUESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "SATURDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   },
-   "THURSDAY": {
-    "opening_time": "08:00",
-    "closing_time": "22:00"
-   }
-  },
-  "km_from_center": 6.4
- },
- {
-  "slug": "padel-bros-budapest",
-  "tenant_id": "0c3770fd-c907-4532-8364-f2f4338324d9",
-  "name": "Padel Bros Budapest",
-  "city": "Budapest",
-  "street": "Ipacsfa utca 8",
-  "postal_code": "1186",
-  "country_code": "HU",
-  "lat": 47.42723339,
-  "lon": 19.17194133,
-  "courts": 3,
-  "court_features": [
-   "Double",
-   "Indoor",
-   "Panoramic",
-   "Single"
-  ],
-  "resource_ids": [
-   "5c8cd755-051d-4df5-8876-e4dc5def6842",
-   "3aec52c1-fab4-4a61-803e-e2130c1ae886",
-   "c817a6ce-601f-4b7d-8e31-ce734e56c351"
-  ],
-  "opening_hours": {
-   "FRIDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "SUNDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "MONDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "TUESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "SATURDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   },
-   "THURSDAY": {
-    "opening_time": "00:00",
-    "closing_time": "00:00"
-   }
-  },
-  "km_from_center": 12.6
- },
- {
   "slug": "padel-garden-budapest",
   "tenant_id": "a10584da-2c4e-4c47-a3d8-d630b7b3606e",
   "name": "Padel Garden Budapest",
@@ -643,11 +702,11 @@
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
-   "SUNDAY": {
+   "WEDNESDAY": {
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
-   "HOLIDAYS": {
+   "SUNDAY": {
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
@@ -655,11 +714,11 @@
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
-   "WEDNESDAY": {
+   "THURSDAY": {
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
-   "THURSDAY": {
+   "SATURDAY": {
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
@@ -667,7 +726,7 @@
     "opening_time": "09:00",
     "closing_time": "21:00"
    },
-   "SATURDAY": {
+   "HOLIDAYS": {
     "opening_time": "09:00",
     "closing_time": "21:00"
    }
@@ -697,7 +756,7 @@
    "4a15b191-b2ff-4830-b613-2633de68cb1a"
   ],
   "opening_hours": {
-   "FRIDAY": {
+   "WEDNESDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -705,11 +764,11 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "MONDAY": {
+   "THURSDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "TUESDAY": {
+   "MONDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
@@ -717,100 +776,16 @@
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "WEDNESDAY": {
+   "FRIDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
+   "TUESDAY": {
     "opening_time": "06:00",
     "closing_time": "23:00"
    }
   },
   "km_from_center": 9.0
- },
- {
-  "slug": "musketas-padel",
-  "tenant_id": "e9166c4b-511b-4d60-9e28-ef60001fe1b7",
-  "name": "Musketas Padel ",
-  "city": "Budapest",
-  "street": "Musketas street 1.",
-  "postal_code": "1112",
-  "country_code": "HU",
-  "lat": 47.4462277,
-  "lon": 18.9818697,
-  "courts": 2,
-  "court_features": [
-   "Crystal",
-   "Double",
-   "Indoor",
-   "Outdoor"
-  ],
-  "resource_ids": [
-   "20a8d742-9f44-4bb0-a3d0-a0abaf4896cf",
-   "95dd5707-47a9-4017-997e-e8298bc803ee"
-  ],
-  "opening_hours": {
-   "HOLIDAYS": {
-    "opening_time": "07:00",
-    "closing_time": "23:00"
-   }
-  },
-  "km_from_center": 7.2
- },
- {
-  "slug": "new-padel-club",
-  "tenant_id": "3d81c4ed-27ff-49be-b3cb-dfb2c68e710e",
-  "name": "New Padel Club",
-  "city": "Budaörs",
-  "street": "Baross utca 146 (Decathlon parkoló)",
-  "postal_code": "2040",
-  "country_code": "HU",
-  "lat": 47.45313723,
-  "lon": 18.93779704,
-  "courts": 1,
-  "court_features": [
-   "Double",
-   "Outdoor",
-   "Panoramic"
-  ],
-  "resource_ids": [
-   "edd07f1c-5060-4080-9169-778b1e17dea9"
-  ],
-  "opening_hours": {
-   "FRIDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "SUNDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "MONDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "HOLIDAYS": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "TUESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "SATURDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "WEDNESDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   },
-   "THURSDAY": {
-    "opening_time": "00:00",
-    "closing_time": "23:30"
-   }
-  },
-  "km_from_center": 9.2
  },
  {
   "slug": "future-padel-fot",
@@ -832,11 +807,11 @@
    "2a021b96-54da-4e46-a668-e719c6ebd0d5"
   ],
   "opening_hours": {
-   "FRIDAY": {
+   "TUESDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "SUNDAY": {
+   "THURSDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -844,7 +819,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "TUESDAY": {
+   "SUNDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
@@ -856,7 +831,7 @@
     "opening_time": "07:00",
     "closing_time": "23:00"
    },
-   "THURSDAY": {
+   "FRIDAY": {
     "opening_time": "07:00",
     "closing_time": "23:00"
    }
@@ -864,54 +839,58 @@
   "km_from_center": 16.6
  },
  {
-  "slug": "panorama-padel-budapest",
-  "tenant_id": "24836d0e-266e-4a24-a2aa-d67dafc90ba0",
-  "name": "Panorama Padel Budapest",
-  "city": "Budapest",
-  "street": "Balatoni út 202",
-  "postal_code": "1112",
+  "slug": "new-padel-club",
+  "tenant_id": "3d81c4ed-27ff-49be-b3cb-dfb2c68e710e",
+  "name": "New Padel Club",
+  "city": "Budaörs",
+  "street": "Baross utca 146 (Decathlon parkoló)",
+  "postal_code": "2040",
   "country_code": "HU",
-  "lat": 47.44306699,
-  "lon": 19.00051408,
+  "lat": 47.45313723,
+  "lon": 18.93779704,
   "courts": 1,
   "court_features": [
-   "Crystal",
    "Double",
-   "Outdoor"
+   "Outdoor",
+   "Panoramic"
   ],
   "resource_ids": [
-   "c1a73b0e-b1fc-4c85-b7df-c4bc762fa430"
+   "edd07f1c-5060-4080-9169-778b1e17dea9"
   ],
   "opening_hours": {
-   "MONDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
+   "WEDNESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
    },
    "SUNDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "TUESDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
-   },
-   "WEDNESDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
+    "opening_time": "00:00",
+    "closing_time": "23:30"
    },
    "THURSDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
+    "opening_time": "00:00",
+    "closing_time": "23:30"
    },
-   "FRIDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
+   "MONDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
    },
    "SATURDAY": {
-    "opening_time": "06:00",
-    "closing_time": "23:00"
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
+   "FRIDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
+   "HOLIDAYS": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
+   },
+   "TUESDAY": {
+    "opening_time": "00:00",
+    "closing_time": "23:30"
    }
   },
-  "km_from_center": 6.8
+  "km_from_center": 9.2
  }
 ]
